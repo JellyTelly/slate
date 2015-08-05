@@ -1563,15 +1563,1069 @@ Authorization: Token token=&quot;auth_token&quot;</code></p>
 
           <h1 id="series">Series</h1>
 
-<h2 id="todo">TODO</h2>
+<h2 id="get-an-individual-series">Get an individual series</h2>
+<pre class="highlight ruby"><code>
+</code></pre>
+<pre class="highlight shell"><code>curl -X GET -H <span class="s2">"Authorization: Token token="</span>auth_token<span class="s2">""</span> -H <span class="s2">"Cache-Control: no-cache"</span> <span class="s1">'http://api.jellytelly.com/series/VeggieTales'</span>
+</code></pre>
+
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"series_info"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">87</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-07-25T02:40:37.302-05:00"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-07-25T02:40:37.543-05:00"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"embed_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"k1cWVlczroGjw0tvMyA7Ij2_d5LZdy3D"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"VeggieTales"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"displayName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"VeggieTales"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Watch these select episodes as Bob the Tomato, Larry the Cucumber and all their veggie friends engage in fun stories and songs that teach Biblical values!"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"imageUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://cf.c.ooyala.com/k1cWVlczroGjw0tvMyA7Ij2_d5LZdy3D/promo249759216"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"popularity"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"episodeCount"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"asset_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"video"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"duration"</span><span class="p">:</span><span class="w"> </span><span class="mi">6573</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"external_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"asset_created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-02-16T11:32:00.000-06:00"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"asset_updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-03-06T14:46:57.000-06:00"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"asset_status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"live"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"asset_hosted_at"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"original_file_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BLACK TEST 1.mp4"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nt">"videos"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"series_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">87</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">185</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-07-25T02:41:14.818-05:00"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-08-03T18:22:14.418-05:00"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"embed_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"E5YzkycjrLejf9I2zIPn0bpeYO3iXSCP"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Madame Blueberry"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Let your kids spend a little time with Madame Blueberry and the rest of the Veggies and they&amp;#039;ll learn that &amp;quot;being greedy makes you grumpy -- but a thankful heart is a happy heart!&amp;quot;"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"image_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://cf.c.ooyala.com/E5YzkycjrLejf9I2zIPn0bpeYO3iXSCP/c2iSbFw6b5_lmbUn4xMDoxOmdtO40mAx"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"duration"</span><span class="p">:</span><span class="w"> </span><span class="mi">2224641</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"asset_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"video"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"asset_status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"live"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"asset_created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-12-02T15:19:56.000-06:00"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"asset_updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-04-16T12:44:48.000-05:00"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"original_file_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Madame Blueberry for JT.mp4"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"featured"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"episode"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"series_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">87</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">187</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-07-25T02:41:15.165-05:00"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-08-03T18:22:14.901-05:00"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"embed_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"w2bTgycjpeLNDcea39RQYE00PhlC56Ni"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Moe and the Big Exit"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Saddle up for western adventure as Moe (Larry the Cucumber) brings us a lesson in following directions."</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"image_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://cf.c.ooyala.com/w2bTgycjpeLNDcea39RQYE00PhlC56Ni/T6d-rUZNqcn4uJqH4xMDoxOjBzMTt2bJ"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"duration"</span><span class="p">:</span><span class="w"> </span><span class="mi">3050383</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"asset_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"video"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"asset_status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"live"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"asset_created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-12-02T15:02:59.000-06:00"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"asset_updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-04-16T12:45:28.000-05:00"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"original_file_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Veggietales - Moe Big Exit.mp4"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"featured"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"episode"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"series_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">87</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">188</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-07-25T02:41:15.390-05:00"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-08-03T18:22:15.192-05:00"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"embed_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"YweTYycjqcYH3Xdsmgi8EOQIcxh20kMR"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Dave and the Giant Pickle"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"While little shepherd boy Dave is made to feel small by his brothers, everyone finds out that their foe is much bigger than they thought! Is anyone big enough to take on a 9-foot pickle? Dave learns that \"with God, all things are possible!\""</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"image_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://cf.c.ooyala.com/YweTYycjqcYH3Xdsmgi8EOQIcxh20kMR/m3ijHmCxBlAEKp8H4xMDoxOmdtO40mAx"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"duration"</span><span class="p">:</span><span class="w"> </span><span class="mi">1686770</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"asset_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"video"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"asset_status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"live"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"asset_created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-12-02T14:14:26.000-06:00"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"asset_updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-06-15T11:09:06.000-05:00"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"original_file_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Veggietales - Dave Giant Pickle.mp4"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"featured"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"episode"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"series_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">87</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">189</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-07-25T02:41:15.595-05:00"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-08-03T18:22:15.494-05:00"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"embed_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Z5ZDUycjo8B5WwTtJY2sBPoKdybkf7_y"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Esther: The Girl Who Became Queen"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Esther has been chosen by the King to be Queen, but she’s about to find out that the job will take more courage than she ever imagined! Esther: The Girl Who Became Queen teaches kids that “you never need to be afraid to do what’s right!”"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"image_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://cf.c.ooyala.com/Z5ZDUycjo8B5WwTtJY2sBPoKdybkf7_y/FM2ZbPgo9ocuVTrX4xMDoxOmdtO40mAx"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"duration"</span><span class="p">:</span><span class="w"> </span><span class="mi">2370303</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"asset_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"video"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"asset_status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"live"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"asset_created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-12-02T13:09:50.000-06:00"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"asset_updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-04-16T12:44:04.000-05:00"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"original_file_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Veggietales - Esther.mp4"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"featured"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"episode"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"series_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">87</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">190</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-07-25T02:41:15.804-05:00"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-08-03T18:22:15.725-05:00"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"embed_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"hjNGoxcjqloxO0CT_9ldyIOS7ROzdMiC"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"King George and the Ducky"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Unlike other kings, King George spends most of his time ... in the bathtub! That's where he plays with his favorite toy: his rubber ducky. But one ducky isn't enough for King George-- he wants all the duckies in the kingdom! Can he learn to put others first before it's too late?"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"image_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://cf.c.ooyala.com/hjNGoxcjqloxO0CT_9ldyIOS7ROzdMiC/Y_A4N2V4-G_UMyZH4xMDoxOmdtO40mAx"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"duration"</span><span class="p">:</span><span class="w"> </span><span class="mi">2150316</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"asset_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"video"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"asset_status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"live"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"asset_created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-12-01T15:06:20.000-06:00"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"asset_updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-05-12T13:47:18.000-05:00"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"original_file_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Veggietales - King George.mp4"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"featured"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"episode"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"series_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">87</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">191</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-07-25T02:41:15.999-05:00"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-08-03T18:22:15.946-05:00"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"embed_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sxeWcxcjo4lrXN4sSiI-S2erHRTzpnzK"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The Ballad of Little Joe"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Now, y’all have heard the story of Joseph and his coat of many colors before, but I reckon you’ve never heard it told as a Western… until now."</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"image_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://cf.c.ooyala.com/sxeWcxcjo4lrXN4sSiI-S2erHRTzpnzK/qLYPP9OxJMjaV9jn4zMDoxOjBzMTu0hl"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"duration"</span><span class="p">:</span><span class="w"> </span><span class="mi">2191399</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"asset_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"video"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"asset_status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"live"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"asset_created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-12-01T13:28:40.000-06:00"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"asset_updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-04-16T12:44:22.000-05:00"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"original_file_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"LITTLE JOE UPDATED.mp4"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"featured"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"episode"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<p>This endpoint returns series_info based on either series displayName or id. The id sent is checked for numericality to determine how to search for series</p>
+
+<aside class="notice">NOTE: this method requires the auth_token</aside>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET /series/&lt;id&gt; HTTP/1.1
+Host: api.jellytelly.com
+Authorization: Token token=&quot;auth_token&quot;</code></p>
+
+<h3 id="url-parameters">URL Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Datatype</th>
+<th>Description</th>
+<th>Required?</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>String</td>
+<td>Can be either a number or string</td>
+<td>true</td>
+</tr>
+</tbody></table>
+
+<h2 id="get-popular-series">Get Popular series</h2>
+<pre class="highlight ruby"><code>
+</code></pre>
+<pre class="highlight shell"><code>curl -X GET -H <span class="s2">"Authorization: Token token="</span>auth_token<span class="s2">""</span> -H <span class="s2">"Cache-Control: no-cache"</span> <span class="s1">'http://api.jellytelly.com/series/popular?limit=2'</span>
+</code></pre>
+
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"series_info"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-07-25T02:40:20.665-05:00"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-07-25T02:40:21.232-05:00"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"embed_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"84NXc3dDpTxWHWYZMgKzX_Og98PR80JV"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The Last Chance Detectives"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"displayName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Last Chance Detectives"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Mike, Ben, Winnie and Spence - also known as the Last Chance Detectives - solve mysteries in their small desert hometown of Ambrosia, Arizona in the search for truth. Along the way, they discover the importance of integrity, forgiveness, faith and more."</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"imageUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://cf.c.ooyala.com/84NXc3dDpTxWHWYZMgKzX_Og98PR80JV/promo261777455"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"popularity"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"episodeCount"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"asset_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"video"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"duration"</span><span class="p">:</span><span class="w"> </span><span class="mi">5005</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"external_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"asset_created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-03-27T11:10:48.000-05:00"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"asset_updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-07-21T14:58:09.000-05:00"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"asset_status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"live"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"asset_hosted_at"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"original_file_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Black Screen for matt.mov"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-07-25T02:40:20.415-05:00"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-07-25T02:40:20.661-05:00"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"embed_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"JzNXc3dDoP8EIOf_UNyWPCqUdp31CGSR"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Janet's Planet"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"displayName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Janets Planet"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Traveling at the speed of thought, join Janet on her adventures as she learns about science and health."</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"imageUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://cf.c.ooyala.com/JzNXc3dDoP8EIOf_UNyWPCqUdp31CGSR/promo261777615"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"popularity"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"episodeCount"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"asset_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"video"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"duration"</span><span class="p">:</span><span class="w"> </span><span class="mi">5005</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"external_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"asset_created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-03-27T11:11:08.000-05:00"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"asset_updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-07-21T15:10:22.000-05:00"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"asset_status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"live"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"asset_hosted_at"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"original_file_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Black Screen for matt.mov"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<p>This endpoint returns series_info based on popularity limited to number sent in</p>
+
+<aside class="notice">NOTE: this method requires the auth_token</aside>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET /series/popular?limit=&lt;limit&gt; HTTP/1.1
+Host: api.jellytelly.com
+Authorization: Token token=&quot;auth_token&quot;</code></p>
+
+<h3 id="url-parameters">URL Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Datatype</th>
+<th>Description</th>
+<th>Required?</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>limit</td>
+<td>String</td>
+<td>limit controls the number of series to return</td>
+<td>true</td>
+</tr>
+</tbody></table>
+
+<h2 id="get-new-series">Get New Series</h2>
+<pre class="highlight ruby"><code>
+</code></pre>
+<pre class="highlight shell"><code>curl -X GET -H <span class="s2">"Authorization: Token token="</span>auth_token<span class="s2">""</span> -H <span class="s2">"Cache-Control: no-cache"</span> <span class="s1">'http://api.jellytelly.com/series/new_episodes'</span>
+</code></pre>
+
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"series_info"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-07-25T02:40:21.237-05:00"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-07-25T02:40:21.431-05:00"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"embed_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"IwNXc3dDoGzBO_7d5sllw9EDepmOTAIz"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Sing Through the BIble"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"displayName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Sing Through the Bible"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Sing through the Bible with Buck Denver and Friends! 30 music videos take you from Genesis to Revelation in a musical journey featuring your favorite characters from What’s in the Bible? - The Fabulous Bentley Brothers, Clive and Ian, Sunday School Lady and more! Includes on-screen sing-along lyrics for all 30 music videos."</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"imageUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://cf.c.ooyala.com/IwNXc3dDoGzBO_7d5sllw9EDepmOTAIz/promo261149814"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"popularity"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"episodeCount"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"asset_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"video"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"duration"</span><span class="p">:</span><span class="w"> </span><span class="mi">5005</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"external_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"asset_created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-03-27T11:10:39.000-05:00"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"asset_updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-07-14T08:38:02.000-05:00"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"asset_status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"live"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"asset_hosted_at"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"original_file_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Black Screen for matt.mov"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-07-25T02:40:22.597-05:00"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-07-25T02:40:22.952-05:00"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"embed_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5pZWwxdDrVu6LMH95YsJ4FfFgVUKdukT"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The Power of Same"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"displayName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The Power of Same"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Millions of miles above the earth, in a spacecraft that can navigate space storms, supernovas, and the sun, Astrohost Kyle teaches all about the power of self-discipline and building healthy habits."</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"imageUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://cf.c.ooyala.com/5pZWwxdDrVu6LMH95YsJ4FfFgVUKdukT/promo252777728"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"popularity"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"episodeCount"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"asset_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"video"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"duration"</span><span class="p">:</span><span class="w"> </span><span class="mi">5071</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"external_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"asset_created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-03-17T13:28:53.000-05:00"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"asset_updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-07-14T08:42:17.000-05:00"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"asset_status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"live"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"asset_hosted_at"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"original_file_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BLACK SCREEN FOR MATT.mp4"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">12</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-07-25T02:40:23.130-05:00"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-07-25T02:40:23.332-05:00"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"embed_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NwOWwxdDqakm6e-HkyMY5wKbtPTQ6EXM"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The Finders: Warehouse 110"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"displayName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The Finders Warehouse 110"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A mysterious delivery sends the Finders into the dark rooms of Warehouse 110, a property that is steeped in history and comes with legends of a treasure and it's very own pirate ghost. In Warehouse 110, The Finders must work together to find the deed, save the warehouse, and find the treasure before someone else - or something else - gets there first."</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"imageUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://cf.c.ooyala.com/NwOWwxdDqakm6e-HkyMY5wKbtPTQ6EXM/promo252777758"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"popularity"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"episodeCount"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"asset_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"video"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"duration"</span><span class="p">:</span><span class="w"> </span><span class="mi">5071</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"external_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"asset_created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-03-17T13:23:05.000-05:00"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"asset_updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-07-14T08:44:34.000-05:00"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"asset_status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"live"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"asset_hosted_at"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"original_file_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BLACK SCREEN FOR MATT.mp4"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">11</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-07-25T02:40:22.956-05:00"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-07-25T02:40:23.125-05:00"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"embed_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BhYWwxdDor7PR4M6Ip2kb9Rhtd1iDaWq"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The Adventures of Sam E. Sprocket"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"displayName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The Adventures of Sam E Sprocket"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Sam E. Sprocket is a brave space traveler, but if he can't learn from the Bible how to be a Power Protector, he'll never collect enough fuel stars to keep his spaceship moving! In The Adventures of Sam E. Sprocket, Sam E. and his computer, Meep, work together to learn from God's Word and make it home safely."</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"imageUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://cf.c.ooyala.com/BhYWwxdDor7PR4M6Ip2kb9Rhtd1iDaWq/promo252777744"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"popularity"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"episodeCount"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"asset_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"video"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"duration"</span><span class="p">:</span><span class="w"> </span><span class="mi">5071</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"external_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"asset_created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-03-17T13:23:33.000-05:00"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"asset_updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-07-14T08:42:55.000-05:00"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"asset_status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"live"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"asset_hosted_at"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"original_file_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BLACK SCREEN FOR MATT.mp4"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-07-25T02:40:21.814-05:00"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-07-25T02:40:22.013-05:00"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"embed_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"F5M3c3dDoV5FGOkh7D1aqGnl-r5YEESe"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Sticks and Stones"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"displayName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Sticks and Stones"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"In Sticks &amp; Stones, Pastor Frank uses ancient weapons to teach about big faith from the story of David and Goliath."</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"imageUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://cf.c.ooyala.com/F5M3c3dDoV5FGOkh7D1aqGnl-r5YEESe/promo252777621"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"popularity"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"episodeCount"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"asset_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"video"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"duration"</span><span class="p">:</span><span class="w"> </span><span class="mi">5005</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"external_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"asset_created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-03-27T11:09:44.000-05:00"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"asset_updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-07-14T08:41:15.000-05:00"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"asset_status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"live"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"asset_hosted_at"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"original_file_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Black Screen for matt.mov"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-07-25T02:40:22.382-05:00"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-07-25T02:40:22.593-05:00"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"embed_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"oyM3c3dDpwYWx7U8xk-jRWvBeLHhTnW9"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Oldman and Spielman's Christmastime Adventure"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"displayName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Oldman and Spielmans Christmastime Adventure"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"In Oldman and Spielman's Christmas Adventure, Doctor Oldman and his former nemesis, Oscar Spielman, take their Christmas musical to Broadway. When something very important gets left behind, their big adventure leads them to a deeper understanding of God's love and a musical finale in Central Park."</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"imageUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://cf.c.ooyala.com/oyM3c3dDpwYWx7U8xk-jRWvBeLHhTnW9/promo252777696"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"popularity"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"episodeCount"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"asset_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"video"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"duration"</span><span class="p">:</span><span class="w"> </span><span class="mi">5005</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"external_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"asset_created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-03-27T11:08:31.000-05:00"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"asset_updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-07-14T08:44:13.000-05:00"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"asset_status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"live"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"asset_hosted_at"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"original_file_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Black Screen for matt.mov"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-07-25T02:40:22.018-05:00"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-07-25T02:40:22.216-05:00"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"embed_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Z1M3c3dDoqys1bY79ZFVReOffp3yN-HB"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Calling Sticks and Stones"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"displayName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Calling Sticks and Stones"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Eugene Sticks and his hilarious sidekick, Stones, read Bible stories and make collectible crafts using only sticks and stones on their very own talk show."</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"imageUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://cf.c.ooyala.com/Z1M3c3dDoqys1bY79ZFVReOffp3yN-HB/promo252777651"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"popularity"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"episodeCount"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"asset_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"video"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"duration"</span><span class="p">:</span><span class="w"> </span><span class="mi">5005</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"external_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"asset_created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-03-27T11:09:33.000-05:00"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"asset_updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-07-14T08:41:28.000-05:00"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"asset_status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"live"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"asset_hosted_at"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"original_file_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Black Screen for matt.mov"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<p>This endpoint returns series_info based on there being new shows added in the last 90 days</p>
+
+<aside class="notice">NOTE: this method requires the auth_token</aside>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET /series/new_episodes HTTP/1.1
+Host: api.jellytelly.com
+Authorization: Token token=&quot;auth_token&quot;</code></p>
+
+<h2 id="get-series-by-label">Get series by label</h2>
+<pre class="highlight ruby"><code>
+</code></pre>
+<pre class="highlight shell"><code>curl -X GET -H <span class="s2">"Authorization: Token token="</span>auth_token<span class="s2">""</span> -H <span class="s2">"Cache-Control: no-cache"</span> <span class="s1">'http://api.jellytelly.com/series/bylabel?label=Adventures,Puppets'</span>
+</code></pre>
+
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"Adventures"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">37</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-07-25T02:40:28.212-05:00"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-07-25T02:40:28.381-05:00"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"embed_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"42Nndmczp8jbf7cGjxsTTC43G0RsZ8j2"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"What Katy Did"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"displayName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"What Katy Did"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Katy, a headstrong, energetic thirteen-year-old girl with a feisty, rebellious streak who seems to be more than her father can handle at times. The arrival of her ill cousin begins to alter Katy's perception of the world."</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"imageUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://cf.c.ooyala.com/42Nndmczp8jbf7cGjxsTTC43G0RsZ8j2/promo248546696"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"popularity"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"episodeCount"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"asset_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"video"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"duration"</span><span class="p">:</span><span class="w"> </span><span class="mi">11583</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"external_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"asset_created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-02-17T13:11:45.000-06:00"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"asset_updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-03-03T11:39:12.000-06:00"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"asset_status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"live"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"asset_hosted_at"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"original_file_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BLACK SCREEN TEST 9.mp4"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-07-25T02:40:21.621-05:00"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-07-25T02:40:21.810-05:00"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"embed_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"szNHc3dDqbJaI_OcljtKqO4PN1watrz5"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Zack In Time"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"displayName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Zack In Time"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Zack Martin doesn't do Christmas. His friend, Doctor Oldman, can't get enough red and green. Zack in Time follows this unlikely pair through time on a bright red, time-traveling motorcycle, where Zack doesn't just get a taste of the wild west and disco fever, but learns to love his family and their timeless Christmas traditions."</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"imageUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://cf.c.ooyala.com/szNHc3dDqbJaI_OcljtKqO4PN1watrz5/promo252777603"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"popularity"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"episodeCount"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"asset_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"video"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"duration"</span><span class="p">:</span><span class="w"> </span><span class="mi">5005</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"external_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"asset_created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-03-27T11:10:00.000-05:00"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"asset_updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-07-14T08:40:51.000-05:00"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"asset_status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"live"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"asset_hosted_at"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"original_file_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Black Screen for matt.mov"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<p>This endpoint returns series_info based on label</p>
+
+<aside class="notice">NOTE: this method requires the auth_token</aside>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET /series/bylabel?label=&lt;label&gt; HTTP/1.1
+Host: api.jellytelly.com
+Authorization: Token token=&quot;auth_token&quot;</code></p>
+
+<h3 id="url-parameters">URL Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Datatype</th>
+<th>Description</th>
+<th>Required?</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>label</td>
+<td>String</td>
+<td>Available labels are from list of v3 labels, see listLabels method</td>
+<td>true</td>
+</tr>
+</tbody></table>
+
+<h2 id="list-available-labels">List available labels</h2>
+<pre class="highlight ruby"><code>
+</code></pre>
+<pre class="highlight shell"><code>curl -X GET -H <span class="s2">"Authorization: Token token="</span>auth_token<span class="s2">""</span> -H <span class="s2">"Cache-Control: no-cache"</span> <span class="s1">'http://api.jellytelly.com/labels'</span>
+</code></pre>
+
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">  
+   </span><span class="nt">"labels"</span><span class="p">:[</span><span class="w">  
+      </span><span class="p">{</span><span class="w">  
+         </span><span class="nt">"id"</span><span class="p">:</span><span class="mi">19</span><span class="p">,</span><span class="w">
+         </span><span class="nt">"value"</span><span class="p">:</span><span class="s2">"Adventures"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">  
+         </span><span class="nt">"id"</span><span class="p">:</span><span class="mi">18</span><span class="p">,</span><span class="w">
+         </span><span class="nt">"value"</span><span class="p">:</span><span class="s2">"Ages 2-5"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">  
+         </span><span class="nt">"id"</span><span class="p">:</span><span class="mi">17</span><span class="p">,</span><span class="w">
+         </span><span class="nt">"value"</span><span class="p">:</span><span class="s2">"Ages 5-8"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">  
+         </span><span class="nt">"id"</span><span class="p">:</span><span class="mi">16</span><span class="p">,</span><span class="w">
+         </span><span class="nt">"value"</span><span class="p">:</span><span class="s2">"Ages 8 and Up"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">  
+         </span><span class="nt">"id"</span><span class="p">:</span><span class="mi">15</span><span class="p">,</span><span class="w">
+         </span><span class="nt">"value"</span><span class="p">:</span><span class="s2">"All Ages"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">  
+         </span><span class="nt">"id"</span><span class="p">:</span><span class="mi">14</span><span class="p">,</span><span class="w">
+         </span><span class="nt">"value"</span><span class="p">:</span><span class="s2">"Bible Stories"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">  
+         </span><span class="nt">"id"</span><span class="p">:</span><span class="mi">13</span><span class="p">,</span><span class="w">
+         </span><span class="nt">"value"</span><span class="p">:</span><span class="s2">"Cartoons"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">  
+         </span><span class="nt">"id"</span><span class="p">:</span><span class="mi">12</span><span class="p">,</span><span class="w">
+         </span><span class="nt">"value"</span><span class="p">:</span><span class="s2">"Christmas"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">  
+         </span><span class="nt">"id"</span><span class="p">:</span><span class="mi">11</span><span class="p">,</span><span class="w">
+         </span><span class="nt">"value"</span><span class="p">:</span><span class="s2">"Educational"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">  
+         </span><span class="nt">"id"</span><span class="p">:</span><span class="mi">10</span><span class="p">,</span><span class="w">
+         </span><span class="nt">"value"</span><span class="p">:</span><span class="s2">"En Espanol"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">  
+         </span><span class="nt">"id"</span><span class="p">:</span><span class="mi">9</span><span class="p">,</span><span class="w">
+         </span><span class="nt">"value"</span><span class="p">:</span><span class="s2">"Featured"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">  
+         </span><span class="nt">"id"</span><span class="p">:</span><span class="mi">8</span><span class="p">,</span><span class="w">
+         </span><span class="nt">"value"</span><span class="p">:</span><span class="s2">"History and Nature"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">  
+         </span><span class="nt">"id"</span><span class="p">:</span><span class="mi">7</span><span class="p">,</span><span class="w">
+         </span><span class="nt">"value"</span><span class="p">:</span><span class="s2">"Holidays"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">  
+         </span><span class="nt">"id"</span><span class="p">:</span><span class="mi">6</span><span class="p">,</span><span class="w">
+         </span><span class="nt">"value"</span><span class="p">:</span><span class="s2">"Live Action"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">  
+         </span><span class="nt">"id"</span><span class="p">:</span><span class="mi">20</span><span class="p">,</span><span class="w">
+         </span><span class="nt">"value"</span><span class="p">:</span><span class="s2">"Logged Out Home"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">  
+         </span><span class="nt">"id"</span><span class="p">:</span><span class="mi">5</span><span class="p">,</span><span class="w">
+         </span><span class="nt">"value"</span><span class="p">:</span><span class="s2">"Movies"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">  
+         </span><span class="nt">"id"</span><span class="p">:</span><span class="mi">4</span><span class="p">,</span><span class="w">
+         </span><span class="nt">"value"</span><span class="p">:</span><span class="s2">"Music and Art"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">  
+         </span><span class="nt">"id"</span><span class="p">:</span><span class="mi">3</span><span class="p">,</span><span class="w">
+         </span><span class="nt">"value"</span><span class="p">:</span><span class="s2">"Parables"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">  
+         </span><span class="nt">"id"</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span><span class="w">
+         </span><span class="nt">"value"</span><span class="p">:</span><span class="s2">"Puppets"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">  
+         </span><span class="nt">"id"</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="w">
+         </span><span class="nt">"value"</span><span class="p">:</span><span class="s2">"Values"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+   </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<p>This endpoint returns list of label id and values to be used to find series by label</p>
+
+<aside class="notice">NOTE: this method requires the auth_token</aside>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET /labels HTTP/1.1
+Host: api.jellytelly.com
+Authorization: Token token=&quot;auth_token&quot;</code></p>
 
           <h1 id="videos">Videos</h1>
 
-<h2 id="todo">TODO</h2>
+<h2 id="get-a-single-video">Get a single video</h2>
+<pre class="highlight ruby"><code>
+</code></pre>
+<pre class="highlight shell"><code>curl -X GET -H <span class="s2">"Authorization: Token token="</span>auth_token<span class="s2">""</span> -H <span class="s2">"Cache-Control: no-cache"</span> <span class="s1">'http://api.jellytelly.com/videos/1'</span>
+
+or
+
+curl -X GET -H <span class="s2">"Authorization: Token token="</span>auth_token<span class="s2">""</span> -H <span class="s2">"Cache-Control: no-cache"</span> <span class="s1">'http://api.jellytelly.com/videos/Sing Through the Bible'</span>
+</code></pre>
+
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"video"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-07-25T02:40:39.909-05:00"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-08-03T18:21:26.479-05:00"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"embed_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"JiczY1djqKDafzRTLd4Raze4gaClSvND"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Sing Through the Bible"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Sing through the Bible with Buck Denver and Friends! 30 music videos take you from Genesis to Revelation in a musical journey featuring your favorite characters from What’s in the Bible? - The Fabulous Bentley Brothers, Clive and Ian, Sunday School Lady and more! Includes on-screen sing-along lyrics for all 30 music videos."</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"image_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://cf.c.ooyala.com/JiczY1djqKDafzRTLd4Raze4gaClSvND/vplNG22HDCZOrhEX4xMDoxOjB1O8AjAz"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"duration"</span><span class="p">:</span><span class="w"> </span><span class="mi">3424257</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"asset_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"video"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"asset_status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"live"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"asset_created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-07-10T13:59:11.000-05:00"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"asset_updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-07-15T16:07:09.000-05:00"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"original_file_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"STTB_For JT.mp4"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"series_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"featured"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"episode"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<p>This endpoint returns video_info based video name or id. The id sent is checked for numericality to determine how to search for video</p>
+
+<aside class="notice">NOTE: this method requires the auth_token</aside>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p>`GET /videos/1 HTTP/1.1
+Host: api.jellytelly.com
+Authorization: Token token=&ldquo;auth_token&rdquo;</p>
+
+<p>or</p>
+
+<p>GET /videos/Sing Through the Bible HTTP/1.1
+Host: api.jellytelly.com
+Authorization: Token token=&ldquo;auth_token&rdquo;`</p>
+
+<h3 id="url-parameters">URL Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Datatype</th>
+<th>Description</th>
+<th>Required?</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>String</td>
+<td>ID of video, can be either a number or string</td>
+<td>true</td>
+</tr>
+</tbody></table>
+
+<h2 id="get-featured-video">Get featured video</h2>
+<pre class="highlight ruby"><code>
+</code></pre>
+<pre class="highlight shell"><code>curl -X GET -H <span class="s2">"Authorization: Token token="</span>auth_token<span class="s2">""</span> -H <span class="s2">"Cache-Control: no-cache"</span> <span class="s1">'http://api.jellytelly.com/videos/featured/'</span>
+</code></pre>
+
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">  
+   </span><span class="nt">"video"</span><span class="p">:{</span><span class="w">  
+      </span><span class="nt">"id"</span><span class="p">:</span><span class="mi">184</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"created_at"</span><span class="p">:</span><span class="s2">"2015-07-14T16:59:17.498-05:00"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"updated_at"</span><span class="p">:</span><span class="s2">"2015-07-14T16:59:17.503-05:00"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"embed_code"</span><span class="p">:</span><span class="s2">"E5YzkycjrLejf9I2zIPn0bpeYO3iXSCP"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"name"</span><span class="p">:</span><span class="s2">"Madame Blueberry"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"description"</span><span class="p">:</span><span class="s2">"Let your kids spend a little time with Madame Blueberry and the rest of the Veggies and they\u0026#039;ll learn that \u0026quot;being greedy makes you grumpy -- but a thankful heart is a happy heart!\u0026quot;"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"image_url"</span><span class="p">:</span><span class="s2">"http://cf.c.ooyala.com/E5YzkycjrLejf9I2zIPn0bpeYO3iXSCP/c2iSbFw6b5_lmbUn4xMDoxOmdtO40mAx"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"duration"</span><span class="p">:</span><span class="mi">2224641</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"asset_type"</span><span class="p">:</span><span class="s2">"video"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"asset_status"</span><span class="p">:</span><span class="s2">"live"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"asset_created_at"</span><span class="p">:</span><span class="s2">"2014-12-02T15:19:56.000-06:00"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"asset_updated_at"</span><span class="p">:</span><span class="s2">"2015-04-16T12:44:48.000-05:00"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"original_file_name"</span><span class="p">:</span><span class="s2">"Madame Blueberry for JT.mp4"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"series_id"</span><span class="p">:</span><span class="mi">84</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"featured"</span><span class="p">:</span><span class="kc">true</span><span class="w">
+   </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<p>This endpoint returns video_info based on user having an active episode or video being flagged as featured. If the user has an active episode that video is returned instead of the video flagged as featured in the system.</p>
+
+<aside class="notice">NOTE: this method requires the auth_token</aside>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET /videos/featured/ HTTP/1.1
+Host: api.jellytelly.com
+Authorization: Token token=&quot;auth_token&quot;</code></p>
+
+<h2 id="get-player-embed-token">Get player embed token</h2>
+<pre class="highlight ruby"><code>
+</code></pre>
+<pre class="highlight shell"><code>curl -X GET -H <span class="s2">"Authorization: Token token="</span>auth_token<span class="s2">""</span> -H <span class="s2">"Cache-Control: no-cache"</span> <span class="s1">'http://api.jellytelly.com/videos/playerEmbedToken?video_embed_code=M2N3RwcDqo98egZnFGbTk-FvkJ32VDTc&amp;player_id=OWVmODJmMjQ4NmU3NWI5NDNhNmNhNjFi&amp;user_id=3'</span>
+</code></pre>
+
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">  
+   </span><span class="nt">"embed_token"</span><span class="p">:</span><span class="s2">"http://player.ooyala.com/sas/embed_token/OWVmODJmMjQ4NmU3NWI5NDNhNmNhNjFi/M2N3RwcDqo98egZnFGbTk-FvkJ32VDTc?account_id=3\u0026api_key=hpZzM615i0ji4siN0eiX3cOy2BeU.qpcP-\u0026expires=1437275726\u0026signature=dT7dlTmcS2PFxhQuUxw7nC8ZLb%2BzCTxt0j6wWjJvIy"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<p>This endpoint returns a url to be used as a token in Ooyala player for XDR (Cross Device Resume).</p>
+
+<aside class="notice">NOTE: this method requires the auth_token</aside>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET /videos/playerEmbedToken?video_embed_code=&lt;video_embed_code&gt;&amp;player_id=&lt;player_id&gt;&amp;user_id=&lt;user_id&gt; HTTP/1.1
+Host: api.jellytelly.com
+Authorization: Token token=&quot;auth_token&quot;</code></p>
+
+<h3 id="url-parameters">URL Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Datatype</th>
+<th>Description</th>
+<th>Required?</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>video_embed_code</td>
+<td>String</td>
+<td>Embed code for video</td>
+<td>true</td>
+</tr>
+<tr>
+<td>player_id</td>
+<td>String</td>
+<td>Id of player</td>
+<td>true</td>
+</tr>
+<tr>
+<td>user_id</td>
+<td>String</td>
+<td>Id of user</td>
+<td>true</td>
+</tr>
+</tbody></table>
+
+<h2 id="get-video-playback-position">Get video playback position</h2>
+<pre class="highlight ruby"><code>
+</code></pre>
+<pre class="highlight shell"><code>curl -X GET -H <span class="s2">"Authorization: Token token="</span>auth_token<span class="s2">""</span> -H <span class="s2">"Cache-Control: no-cache"</span> <span class="s1">'http://api.jellytelly.com/videos/playbackPosition?video_embed_code=M2N3RwcDqo98egZnFGbTk-FvkJ32VDTc&amp;user_id=3'</span>
+</code></pre>
+
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="nt">"playback_position"</span><span class="p">:</span><span class="mi">15587</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<p>This endpoint returns playback position (in seconds) of video to be used in Ooyala player for XDR (Cross Device Resume).</p>
+
+<aside class="notice">NOTE: this method requires the auth_token</aside>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET /videos/playbackPosition?video_embed_code=&lt;video_embed_code&gt;&amp;user_id=&lt;user_id&gt; HTTP/1.1
+Host: api.jellytelly.com
+Authorization: Token token=&quot;auth_token&quot;</code></p>
+
+<h3 id="url-parameters">URL Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Datatype</th>
+<th>Description</th>
+<th>Required?</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>video_embed_code</td>
+<td>String</td>
+<td>Embed code for video</td>
+<td>true</td>
+</tr>
+<tr>
+<td>user_id</td>
+<td>String</td>
+<td>Id of user</td>
+<td>true</td>
+</tr>
+</tbody></table>
 
           <h1 id="games">Games</h1>
 
-<h2 id="todo">TODO</h2>
+<h2 id="list-all-games">List all games</h2>
+<pre class="highlight ruby"><code>
+</code></pre>
+<pre class="highlight shell"><code>curl -X GET -H <span class="s2">"Authorization: Token token="</span>auth_token<span class="s2">""</span> -H <span class="s2">"Cache-Control: no-cache"</span> <span class="s1">'http://api.jellytelly.com/games'</span>
+</code></pre>
+
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"games_info"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Zap!"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Challenge your friends and family in 2 player mode to see who has the fastest reaction time or see if you have what it takes to beat Zap on insane hard!"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Challenges"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"age"</span><span class="p">:</span><span class="w"> </span><span class="s2">"All"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"game_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"HTML5"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"file_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"zap"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-07-19T19:00:00.000-05:00"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-07-19T19:00:00.000-05:00"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Agnes &amp; Winnie's Big Air"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Take to the slopes with Agnes and Winnie and earn big points for the coolest snow boarding tricks."</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Challenges"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"age"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5-8, 8+"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"game_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Flash"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"file_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"big_air"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-07-19T19:00:00.000-05:00"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-07-19T19:00:00.000-05:00"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Air Adventures with Clive and Ian"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Watch out for lions and monkeys as you fly the wild skies with Clive and Ian."</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Challenges"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"age"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5-8, 8+"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"game_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Flash"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"file_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"air_adventures"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-07-19T19:00:00.000-05:00"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-07-19T19:00:00.000-05:00"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Dr. SchniffenHousen’s Alarm in the Lab"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Watch out for flying cats while you help Dr. Schniffenhousen catch his falling beakers."</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Challenges"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"age"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5-8, 8+"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"game_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Flash"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"file_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"alarm"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-07-19T19:00:00.000-05:00"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-07-19T19:00:00.000-05:00"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Pirate Parachute with Captain Pete"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Collect treasure with Captain Pete but don’t let the treasure or the clouds get caught in his parachute."</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Challenges"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"age"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5-8, 8+"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"game_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Flash"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"file_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pirate-parachute"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-07-19T19:00:00.000-05:00"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-07-19T19:00:00.000-05:00"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Captain Pete’s Treasure Hunt"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"It's time to go hunting for treasure with Captain Pete from What's In the Bible?! Go fishing with Captain Pete and collect 'Pearls of Wisdom' along the way, which helps the player learn Bible verses!"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Learn Scripture"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"age"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5-8, 8+"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"game_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"HTML5"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"file_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"captain-petes-treasure-hunt"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-07-19T19:00:00.000-05:00"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-07-19T19:00:00.000-05:00"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Armor of God"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Join the adventure to collect all the pieces of the Armor of God!"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Learn Scripture"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"age"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5-8, 8+"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"game_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"HTML5"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"file_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"armor-up"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-07-19T19:00:00.000-05:00"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-07-19T19:00:00.000-05:00"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Memory Mountain"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Do you have what it takes to climb Memory Mountain? Memorize ten verses that span the Old and New Testament and see if you have what it takes to make to make it to the top! Challenge your friends and family to see who can climb Memory Mountain the fastest!"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Learn Scripture"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"age"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5-8, 8+"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"game_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"HTML5"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"file_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"memory-mountain"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-07-19T19:00:00.000-05:00"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-07-19T19:00:00.000-05:00"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bible What’s It? With Chester Whigget"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Chester Whigget from What's In the Bible? wants to challenge you to Bible trivia! Test your knowledge of the Bible with these questions from Chester and see if you can get a perfect score!"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Learn Scripture"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"age"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5-8, 8+"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"game_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"HTML5"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"file_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bible-whats-it"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-07-19T19:00:00.000-05:00"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-07-19T19:00:00.000-05:00"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"JellyTelly Jigsaw"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Choose from several JellyTelly jigsaw puzzles or make your own."</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Puzzles"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"age"</span><span class="p">:</span><span class="w"> </span><span class="s2">"All"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"game_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Flash"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"file_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"jellytelly-jigsaw"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-07-19T19:00:00.000-05:00"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-07-19T19:00:00.000-05:00"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">11</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Jelly Swap"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Arrange three or more jellies of the same color to clear them from the board."</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Puzzles"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"age"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5-8, 8+"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"game_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Flash"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"file_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"jelly-swap"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-07-19T19:00:00.000-05:00"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-07-19T19:00:00.000-05:00"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">12</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Match Up"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Test your memory and match the JellyTelly characters before time runs out."</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Puzzles"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"age"</span><span class="p">:</span><span class="w"> </span><span class="s2">"All"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"game_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Flash"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"file_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"matchup"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-07-19T19:00:00.000-05:00"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-07-19T19:00:00.000-05:00"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">13</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Spot the Difference"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Find the differences in classic JellyTelly scenes before time runs out!"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Puzzles"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"age"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2-5, 5-8"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"game_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Flash"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"file_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"difference"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-07-19T19:00:00.000-05:00"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-07-19T19:00:00.000-05:00"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">14</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Jelly Paint"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Paint and print the JellyTelly Crew with your own crazy palette!"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Create"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"age"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2-5, 5-8"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"game_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Flash"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"file_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"paint"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-07-19T19:00:00.000-05:00"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-07-19T19:00:00.000-05:00"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">15</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Puppet Producer"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Create your own puppets with the JellyTelly Puppet Producer."</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Create"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"age"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2-5, 5-8"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"game_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Flash"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"file_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"puppet-producer"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-07-19T19:00:00.000-05:00"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-07-19T19:00:00.000-05:00"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<p>This endpoint returns list of games</p>
+
+<aside class="notice">NOTE: this method requires the auth_token</aside>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET /games HTTP/1.1
+Host: api.jellytelly.com
+Authorization: Token token=&quot;auth_token&quot;</code></p>
+
+<h2 id="get-single-game">Get single game</h2>
+<pre class="highlight ruby"><code>
+</code></pre>
+<pre class="highlight shell"><code>curl -X GET -H <span class="s2">"Authorization: Token token="</span>auth_token<span class="s2">""</span> -H <span class="s2">"Cache-Control: no-cache"</span> <span class="s1">'http://api.jellytelly.com/games/15'</span>
+</code></pre>
+
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">  
+   </span><span class="nt">"games_info"</span><span class="p">:[</span><span class="w">  
+      </span><span class="p">{</span><span class="w">  
+         </span><span class="nt">"id"</span><span class="p">:</span><span class="mi">15</span><span class="p">,</span><span class="w">
+         </span><span class="nt">"title"</span><span class="p">:</span><span class="s2">"Puppet Producer"</span><span class="p">,</span><span class="w">
+         </span><span class="nt">"description"</span><span class="p">:</span><span class="s2">"Create your own puppets with the JellyTelly Puppet Producer."</span><span class="p">,</span><span class="w">
+         </span><span class="nt">"category"</span><span class="p">:</span><span class="s2">"Create"</span><span class="p">,</span><span class="w">
+         </span><span class="nt">"age"</span><span class="p">:</span><span class="s2">"2-5, 5-8"</span><span class="p">,</span><span class="w">
+         </span><span class="nt">"game_type"</span><span class="p">:</span><span class="s2">"Flash"</span><span class="p">,</span><span class="w">
+         </span><span class="nt">"file_name"</span><span class="p">:</span><span class="s2">"puppet-producer"</span><span class="p">,</span><span class="w">
+         </span><span class="nt">"created_at"</span><span class="p">:</span><span class="s2">"2015-07-19T19:00:00.000-05:00"</span><span class="p">,</span><span class="w">
+         </span><span class="nt">"updated_at"</span><span class="p">:</span><span class="s2">"2015-07-19T19:00:00.000-05:00"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+   </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<p>This endpoint returns specified game</p>
+
+<aside class="notice">NOTE: this method requires the auth_token</aside>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET /games/15 HTTP/1.1
+Host: api.jellytelly.com
+Authorization: Token token=&quot;auth_token&quot;</code></p>
+
+<h3 id="url-parameters">URL Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Datatype</th>
+<th>Description</th>
+<th>Required?</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>String</td>
+<td>Id of game</td>
+<td>true</td>
+</tr>
+</tbody></table>
 
           <h1 id="search">Search</h1>
 
