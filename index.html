@@ -178,28 +178,40 @@ auth_tokens are environment specific, so you can not reuse them between environm
 <table><thead>
 <tr>
 <th>Parameter</th>
+<th>Datatype</th>
 <th>Description</th>
+<th>Required?</th>
 </tr>
 </thead><tbody>
 <tr>
 <td>user</td>
+<td>Hash</td>
 <td>The user hash object, all parameters must be passed in the user hash</td>
+<td>true</td>
 </tr>
 <tr>
 <td>user[email]</td>
+<td>String</td>
 <td>Email of the user</td>
+<td>true</td>
 </tr>
 <tr>
 <td>user[password]</td>
+<td>String</td>
 <td>User password, minimum length: 6 chars</td>
+<td>true</td>
 </tr>
 <tr>
 <td>user[password_confirmation]</td>
+<td>String</td>
 <td>User password_confirmation, must match password</td>
+<td>true</td>
 </tr>
 <tr>
 <td>user[username]</td>
+<td>String</td>
 <td>Username for all new users is their email</td>
+<td>true</td>
 </tr>
 </tbody></table>
 
@@ -254,16 +266,22 @@ auth_tokens are environment specific, so you can not reuse them between environm
 <table><thead>
 <tr>
 <th>Parameter</th>
+<th>Datatype</th>
 <th>Description</th>
+<th>Required?</th>
 </tr>
 </thead><tbody>
 <tr>
 <td>EMAIL</td>
+<td>String</td>
 <td>The email of the user</td>
+<td>true</td>
 </tr>
 <tr>
 <td>PASSWORD</td>
+<td>String</td>
 <td>The password of the user</td>
+<td>true</td>
 </tr>
 </tbody></table>
 
@@ -514,12 +532,16 @@ Authorization: Token token=&quot;auth_token&quot;</code></p>
 <table><thead>
 <tr>
 <th>Parameter</th>
+<th>Datatype</th>
 <th>Description</th>
+<th>Required?</th>
 </tr>
 </thead><tbody>
 <tr>
 <td>ID</td>
+<td>String</td>
 <td>The ID of the user to retrieve, which can be either integer id or string email</td>
+<td>true</td>
 </tr>
 </tbody></table>
 
@@ -556,36 +578,52 @@ Authorization: Token token=&quot;auth_token&quot;</code></p>
 <table><thead>
 <tr>
 <th>Parameter</th>
+<th>Datatype</th>
 <th>Description</th>
+<th>Required?</th>
 </tr>
 </thead><tbody>
 <tr>
 <td>ID</td>
-<td>Required: The ID of the user to edit</td>
+<td>String</td>
+<td>The ID of the user to edit</td>
+<td>true</td>
 </tr>
 <tr>
 <td>user</td>
+<td>Hash</td>
 <td>The user hash object, all subsequent parameters must be passed in the user hash</td>
+<td></td>
 </tr>
 <tr>
 <td>user[email]</td>
-<td>Optional: Email of the user</td>
+<td>String</td>
+<td>Email of the user</td>
+<td>false</td>
 </tr>
 <tr>
 <td>user[password]</td>
-<td>Optional: User password, minimum length: 6 chars</td>
+<td>String</td>
+<td>User password, minimum length: 6 chars</td>
+<td>false</td>
 </tr>
 <tr>
 <td>user[first_name]</td>
-<td>Optional: User first name</td>
+<td>String</td>
+<td>User first name</td>
+<td>false</td>
 </tr>
 <tr>
 <td>user[last_name]</td>
-<td>Optional: User last name</td>
+<td>String</td>
+<td>User last name</td>
+<td>false</td>
 </tr>
 <tr>
 <td>user[username]</td>
-<td>Optional: Username for login</td>
+<td>String</td>
+<td>Username for login</td>
+<td>false</td>
 </tr>
 </tbody></table>
 
@@ -612,38 +650,544 @@ Authorization: Token token=&quot;auth_token&quot;</code></p>
 <table><thead>
 <tr>
 <th>Parameter</th>
+<th>Datatype</th>
 <th>Description</th>
+<th>Required?</th>
 </tr>
 </thead><tbody>
 <tr>
 <td>ID</td>
+<td>String</td>
 <td>The ID of the user to delete</td>
+<td>true</td>
 </tr>
 </tbody></table>
 
-<h2 id="list-favorites">List Favorites</h2>
+<h2 id="list-favorites">List favorites</h2>
+<pre class="highlight ruby"><code>
+</code></pre>
+<pre class="highlight shell"><code>curl -X GET -H <span class="s2">"Authorization: Token token="</span>auth_token<span class="s2">""</span> -H <span class="s2">"Cache-Control: no-cache"</span> <span class="s1">'http://api.jellytelly.com/users/1/favorites'</span>
+</code></pre>
 
-<h2 id="add-video-to-favorites">Add Video to Favorites</h2>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">  
+   </span><span class="nt">"favorites"</span><span class="p">:[</span><span class="w">  
+      </span><span class="p">{</span><span class="w">  
+         </span><span class="nt">"id"</span><span class="p">:</span><span class="mi">184</span><span class="p">,</span><span class="w">
+         </span><span class="nt">"created_at"</span><span class="p">:</span><span class="s2">"2015-07-14T16:59:17.498-05:00"</span><span class="p">,</span><span class="w">
+         </span><span class="nt">"updated_at"</span><span class="p">:</span><span class="s2">"2015-07-14T16:59:17.503-05:00"</span><span class="p">,</span><span class="w">
+         </span><span class="nt">"embed_code"</span><span class="p">:</span><span class="s2">"E5YzkycjrLejf9I2zIPn0bpeYO3iXSCP"</span><span class="p">,</span><span class="w">
+         </span><span class="nt">"name"</span><span class="p">:</span><span class="s2">"Madame Blueberry"</span><span class="p">,</span><span class="w">
+         </span><span class="nt">"description"</span><span class="p">:</span><span class="s2">"Let your kids spend a little time with Madame Blueberry and the rest of the Veggies and they\u0026#039;ll learn that \u0026quot;being greedy makes you grumpy -- but a thankful heart is a happy heart!\u0026quot;"</span><span class="p">,</span><span class="w">
+         </span><span class="nt">"image_url"</span><span class="p">:</span><span class="s2">"http://cf.c.ooyala.com/E5YzkycjrLejf9I2zIPn0bpeYO3iXSCP/c2iSbFw6b5_lmbUn4xMDoxOmdtO40mAx"</span><span class="p">,</span><span class="w">
+         </span><span class="nt">"duration"</span><span class="p">:</span><span class="mi">2224641</span><span class="p">,</span><span class="w">
+         </span><span class="nt">"asset_type"</span><span class="p">:</span><span class="s2">"video"</span><span class="p">,</span><span class="w">
+         </span><span class="nt">"asset_status"</span><span class="p">:</span><span class="s2">"live"</span><span class="p">,</span><span class="w">
+         </span><span class="nt">"asset_created_at"</span><span class="p">:</span><span class="s2">"2014-12-02T15:19:56.000-06:00"</span><span class="p">,</span><span class="w">
+         </span><span class="nt">"asset_updated_at"</span><span class="p">:</span><span class="s2">"2015-04-16T12:44:48.000-05:00"</span><span class="p">,</span><span class="w">
+         </span><span class="nt">"original_file_name"</span><span class="p">:</span><span class="s2">"Madame Blueberry for JT.mp4"</span><span class="p">,</span><span class="w">
+         </span><span class="nt">"series_id"</span><span class="p">:</span><span class="mi">84</span><span class="p">,</span><span class="w">
+         </span><span class="nt">"featured"</span><span class="p">:</span><span class="kc">false</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+   </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
 
-<h2 id="remove-video-from-favorites">Remove Video from Favorites</h2>
+<p>Returns list of videos added to favorites by user</p>
 
-<h2 id="add-series-to-favorites">Add Series to Favorites</h2>
+<aside class="notice">NOTE: this method requires the auth_token</aside>
 
-<h2 id="remove-series-from-favorites">Remove Series from Favorites</h2>
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET /users/1/favorites HTTP/1.1
+Host: api.jellytelly.com
+Authorization: Token token=&quot;auth_token&quot;</code></p>
+
+<h3 id="url-parameters">URL Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Datatype</th>
+<th>Description</th>
+<th>Required?</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>user_id</td>
+<td>String</td>
+<td>Id of user</td>
+<td>true</td>
+</tr>
+</tbody></table>
+
+<h2 id="add-video-to-favorites">Add Video to favorites</h2>
+<pre class="highlight ruby"><code>
+</code></pre>
+<pre class="highlight shell"><code>curl -X POST -H <span class="s2">"Authorization: Token token="</span>auth_token<span class="s2">""</span> -H <span class="s2">"Cache-Control: no-cache"</span> <span class="s1">'http://api.jellytelly.com/users/4/favorites?video_id=66'</span>
+</code></pre>
+
+<p>Adds video to favorites; no return object, just 200 status</p>
+
+<aside class="notice">NOTE: this method requires the auth_token</aside>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">POST /users/4/favorites?video_id=66 HTTP/1.1
+Host: api.jellytelly.com
+Authorization: Token token=&quot;auth_token&quot;</code></p>
+
+<h3 id="url-parameters">URL Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Datatype</th>
+<th>Description</th>
+<th>Required?</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>user_id</td>
+<td>String</td>
+<td>ID of user</td>
+<td>true</td>
+</tr>
+<tr>
+<td>id</td>
+<td>String</td>
+<td>ID for video</td>
+<td>true</td>
+</tr>
+</tbody></table>
+
+<h2 id="remove-video-from-favorites">Remove Video from favorites</h2>
+<pre class="highlight ruby"><code>
+</code></pre>
+<pre class="highlight shell"><code>curl -X DELETE -H <span class="s2">"Authorization: Token token="</span>auth_token<span class="s2">""</span> -H <span class="s2">"Cache-Control: no-cache"</span> <span class="s1">'http://api.jellytelly.com/users/4/favorites/66'</span>
+</code></pre>
+
+<p>Removes video from favorites; no return object, just 200 status</p>
+
+<aside class="notice">NOTE: this method requires the auth_token</aside>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">DELETE /users/4/favorites/66 HTTP/1.1
+Host: api.jellytelly.com
+Authorization: Token token=&quot;auth_token&quot;</code></p>
+
+<h3 id="url-parameters">URL Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Datatype</th>
+<th>Description</th>
+<th>Required?</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>user_id</td>
+<td>String</td>
+<td>ID of user</td>
+<td>true</td>
+</tr>
+<tr>
+<td>id</td>
+<td>String</td>
+<td>ID for video</td>
+<td>true</td>
+</tr>
+</tbody></table>
+
+<h2 id="add-series-to-favorites">Add Series to favorites</h2>
+<pre class="highlight ruby"><code>
+</code></pre>
+<pre class="highlight shell"><code>curl -X POST -H <span class="s2">"Authorization: Token token="</span>auth_token<span class="s2">""</span> -H <span class="s2">"Cache-Control: no-cache"</span> <span class="s1">'http://api.jellytelly.com/users/4/add_favorites_series?series_id=82'</span>
+</code></pre>
+
+<p>Adds all videos for series favorites; no return object, just 200 status</p>
+
+<aside class="notice">NOTE: this method requires the auth_token</aside>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">POST /users/4/add_favorites_series?series_id=82 HTTP/1.1
+Host: api.jellytelly.com
+Authorization: Token token=&quot;auth_token&quot;</code></p>
+
+<h3 id="url-parameters">URL Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Datatype</th>
+<th>Description</th>
+<th>Required?</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>user_id</td>
+<td>String</td>
+<td>ID of user</td>
+<td>true</td>
+</tr>
+<tr>
+<td>series_id</td>
+<td>String</td>
+<td>ID for series</td>
+<td>true</td>
+</tr>
+</tbody></table>
+
+<h2 id="remove-series-from-favorites">Remove Series from favorites</h2>
+<pre class="highlight ruby"><code>
+</code></pre>
+<pre class="highlight shell"><code>curl -X DELETE -H <span class="s2">"Authorization: Token token="</span>auth_token<span class="s2">""</span> -H <span class="s2">"Cache-Control: no-cache"</span> <span class="s1">'http://api.jellytelly.com/users/4/remove_favorites_series?series_id=82'</span>
+</code></pre>
+
+<p>Removes all videos for series from favorites; no return object, just 200 status</p>
+
+<aside class="notice">NOTE: this method requires the auth_token</aside>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">DELETE /users/4/remove_favorites_series?series_id=82 HTTP/1.1
+Host: api.jellytelly.com
+Authorization: Token token=&quot;auth_token&quot;</code></p>
+
+<h3 id="url-parameters">URL Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Datatype</th>
+<th>Description</th>
+<th>Required?</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>user_id</td>
+<td>String</td>
+<td>ID of user</td>
+<td>true</td>
+</tr>
+<tr>
+<td>series_id</td>
+<td>String</td>
+<td>ID for series</td>
+<td>true</td>
+</tr>
+</tbody></table>
 
 <h2 id="list-playlist">List Playlist</h2>
+<pre class="highlight ruby"><code>
+</code></pre>
+<pre class="highlight shell"><code>curl -X GET -H <span class="s2">"Authorization: Token token="</span>auth_token<span class="s2">""</span> -H <span class="s2">"Cache-Control: no-cache"</span> <span class="s1">'http://api.jellytelly.com/users/1/playlists'</span>
+</code></pre>
+
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">  
+   </span><span class="nt">"playlist"</span><span class="p">:[</span><span class="w">  
+      </span><span class="p">{</span><span class="w">  
+         </span><span class="nt">"id"</span><span class="p">:</span><span class="mi">184</span><span class="p">,</span><span class="w">
+         </span><span class="nt">"created_at"</span><span class="p">:</span><span class="s2">"2015-07-14T16:59:17.498-05:00"</span><span class="p">,</span><span class="w">
+         </span><span class="nt">"updated_at"</span><span class="p">:</span><span class="s2">"2015-07-14T16:59:17.503-05:00"</span><span class="p">,</span><span class="w">
+         </span><span class="nt">"embed_code"</span><span class="p">:</span><span class="s2">"E5YzkycjrLejf9I2zIPn0bpeYO3iXSCP"</span><span class="p">,</span><span class="w">
+         </span><span class="nt">"name"</span><span class="p">:</span><span class="s2">"Madame Blueberry"</span><span class="p">,</span><span class="w">
+         </span><span class="nt">"description"</span><span class="p">:</span><span class="s2">"Let your kids spend a little time with Madame Blueberry and the rest of the Veggies and they\u0026#039;ll learn that \u0026quot;being greedy makes you grumpy -- but a thankful heart is a happy heart!\u0026quot;"</span><span class="p">,</span><span class="w">
+         </span><span class="nt">"image_url"</span><span class="p">:</span><span class="s2">"http://cf.c.ooyala.com/E5YzkycjrLejf9I2zIPn0bpeYO3iXSCP/c2iSbFw6b5_lmbUn4xMDoxOmdtO40mAx"</span><span class="p">,</span><span class="w">
+         </span><span class="nt">"duration"</span><span class="p">:</span><span class="mi">2224641</span><span class="p">,</span><span class="w">
+         </span><span class="nt">"asset_type"</span><span class="p">:</span><span class="s2">"video"</span><span class="p">,</span><span class="w">
+         </span><span class="nt">"asset_status"</span><span class="p">:</span><span class="s2">"live"</span><span class="p">,</span><span class="w">
+         </span><span class="nt">"asset_created_at"</span><span class="p">:</span><span class="s2">"2014-12-02T15:19:56.000-06:00"</span><span class="p">,</span><span class="w">
+         </span><span class="nt">"asset_updated_at"</span><span class="p">:</span><span class="s2">"2015-04-16T12:44:48.000-05:00"</span><span class="p">,</span><span class="w">
+         </span><span class="nt">"original_file_name"</span><span class="p">:</span><span class="s2">"Madame Blueberry for JT.mp4"</span><span class="p">,</span><span class="w">
+         </span><span class="nt">"series_id"</span><span class="p">:</span><span class="mi">84</span><span class="p">,</span><span class="w">
+         </span><span class="nt">"featured"</span><span class="p">:</span><span class="kc">false</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+   </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<p>Returns list of videos added to playlist by user</p>
+
+<aside class="notice">NOTE: this method requires the auth_token</aside>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET /users/1/playlists HTTP/1.1
+Host: api.jellytelly.com
+Authorization: Token token=&quot;auth_token&quot;</code></p>
+
+<h3 id="url-parameters">URL Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Datatype</th>
+<th>Description</th>
+<th>Required?</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>user_id</td>
+<td>String</td>
+<td>Id of user</td>
+<td>true</td>
+</tr>
+</tbody></table>
 
 <h2 id="add-video-to-playlist">Add Video to Playlist</h2>
+<pre class="highlight ruby"><code>
+</code></pre>
+<pre class="highlight shell"><code>curl -X POST -H <span class="s2">"Authorization: Token token="</span>auth_token<span class="s2">""</span> -H <span class="s2">"Cache-Control: no-cache"</span> <span class="s1">'http://api.jellytelly.com/users/4/playlists?video_id=66'</span>
+</code></pre>
 
-<h2 id="remove-video-from-favorites">Remove Video from Favorites</h2>
+<p>Adds video to playlist; no return object, just 200 status</p>
+
+<aside class="notice">NOTE: this method requires the auth_token</aside>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">POST /users/4/playlists?video_id=66 HTTP/1.1
+Host: api.jellytelly.com
+Authorization: Token token=&quot;auth_token&quot;</code></p>
+
+<h3 id="url-parameters">URL Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Datatype</th>
+<th>Description</th>
+<th>Required?</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>user_id</td>
+<td>String</td>
+<td>ID of user</td>
+<td>true</td>
+</tr>
+<tr>
+<td>id</td>
+<td>String</td>
+<td>ID for video</td>
+<td>true</td>
+</tr>
+</tbody></table>
+
+<h2 id="remove-video-from-playlist">Remove Video from Playlist</h2>
+<pre class="highlight ruby"><code>
+</code></pre>
+<pre class="highlight shell"><code>curl -X DELETE -H <span class="s2">"Authorization: Token token="</span>auth_token<span class="s2">""</span> -H <span class="s2">"Cache-Control: no-cache"</span> <span class="s1">'http://api.jellytelly.com/users/4/playlists/66'</span>
+</code></pre>
+
+<p>Removes video from playlist; no return object, just 200 status</p>
+
+<aside class="notice">NOTE: this method requires the auth_token</aside>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">DELETE /users/4/playlists/66 HTTP/1.1
+Host: api.jellytelly.com
+Authorization: Token token=&quot;auth_token&quot;</code></p>
+
+<h3 id="url-parameters">URL Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Datatype</th>
+<th>Description</th>
+<th>Required?</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>user_id</td>
+<td>String</td>
+<td>ID of user</td>
+<td>true</td>
+</tr>
+<tr>
+<td>id</td>
+<td>String</td>
+<td>ID for video</td>
+<td>true</td>
+</tr>
+</tbody></table>
 
 <h2 id="add-series-to-playlist">Add Series to Playlist</h2>
+<pre class="highlight ruby"><code>
+</code></pre>
+<pre class="highlight shell"><code>curl -X POST -H <span class="s2">"Authorization: Token token="</span>auth_token<span class="s2">""</span> -H <span class="s2">"Cache-Control: no-cache"</span> <span class="s1">'http://api.jellytelly.com/users/4/add_playlist_series?series_id=82'</span>
+</code></pre>
+
+<p>Adds all videos for series playlist; no return object, just 200 status</p>
+
+<aside class="notice">NOTE: this method requires the auth_token</aside>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">POST /users/4/add_playlist_series?series_id=82 HTTP/1.1
+Host: api.jellytelly.com
+Authorization: Token token=&quot;auth_token&quot;</code></p>
+
+<h3 id="url-parameters">URL Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Datatype</th>
+<th>Description</th>
+<th>Required?</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>user_id</td>
+<td>String</td>
+<td>ID of user</td>
+<td>true</td>
+</tr>
+<tr>
+<td>series_id</td>
+<td>String</td>
+<td>ID for series</td>
+<td>true</td>
+</tr>
+</tbody></table>
 
 <h2 id="remove-series-from-playlist">Remove Series from Playlist</h2>
+<pre class="highlight ruby"><code>
+</code></pre>
+<pre class="highlight shell"><code>curl -X DELETE -H <span class="s2">"Authorization: Token token="</span>auth_token<span class="s2">""</span> -H <span class="s2">"Cache-Control: no-cache"</span> <span class="s1">'http://api.jellytelly.com/users/4/remove_playlist_series?series_id=82'</span>
+</code></pre>
+
+<p>Removes all videos for series from playlist; no return object, just 200 status</p>
+
+<aside class="notice">NOTE: this method requires the auth_token</aside>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">DELETE /users/4/remove_playlist_series?series_id=82 HTTP/1.1
+Host: api.jellytelly.com
+Authorization: Token token=&quot;auth_token&quot;</code></p>
+
+<h3 id="url-parameters">URL Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Datatype</th>
+<th>Description</th>
+<th>Required?</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>user_id</td>
+<td>String</td>
+<td>ID of user</td>
+<td>true</td>
+</tr>
+<tr>
+<td>series_id</td>
+<td>String</td>
+<td>ID for series</td>
+<td>true</td>
+</tr>
+</tbody></table>
 
 <h2 id="add-update-video-rating">Add / Update Video Rating</h2>
+<pre class="highlight ruby"><code>
+</code></pre>
+<pre class="highlight shell"><code>curl -X POST -H <span class="s2">"Authorization: Token token="</span>auth_token<span class="s2">""</span> -H <span class="s2">"Cache-Control: no-cache"</span> <span class="s1">'http://api.jellytelly.com/users/4/ratings?video_id=66&amp;rating=3.5'</span>
+</code></pre>
+
+<p>Adds rating to video; no return object, just 200 status</p>
+
+<aside class="notice">NOTE: this method requires the auth_token</aside>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">POST /users/4/ratings?video_id=66&amp;rating=3.5 HTTP/1.1
+Host: api.jellytelly.com
+Authorization: Token token=&quot;auth_token&quot;</code></p>
+
+<h3 id="url-parameters">URL Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Datatype</th>
+<th>Description</th>
+<th>Required?</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>user_id</td>
+<td>String</td>
+<td>ID of user</td>
+<td>true</td>
+</tr>
+<tr>
+<td>video_id</td>
+<td>String</td>
+<td>ID for video</td>
+<td>true</td>
+</tr>
+<tr>
+<td>rating</td>
+<td>String</td>
+<td>Value for rating</td>
+<td>true</td>
+</tr>
+</tbody></table>
 
 <h2 id="set-active-episode">Set Active Episode</h2>
+<pre class="highlight ruby"><code>
+</code></pre>
+<pre class="highlight shell"><code>curl -X POST -H <span class="s2">"Authorization: Token token="</span>auth_token<span class="s2">""</span> -H <span class="s2">"Cache-Control: no-cache"</span> <span class="s1">'http://api.jellytelly.com/users/1/set_active_episode?embed_code=dxeG41dTrpdi41J069c1syLsLsUQyk2U'</span>
+</code></pre>
+
+<p>Sets active episode on user record; no return object, just 200 status</p>
+
+<aside class="notice">NOTE: this method requires the auth_token</aside>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">POST /users/1/set_active_episode?embed_code=dxeG41dTrpdi41J069c1syLsLsUQyk2U HTTP/1.1
+Host: api.jellytelly.com
+Authorization: Token token=&quot;auth_token&quot;</code></p>
+
+<h3 id="url-parameters">URL Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Datatype</th>
+<th>Description</th>
+<th>Required?</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>user_id</td>
+<td>String</td>
+<td>ID of user</td>
+<td>true</td>
+</tr>
+<tr>
+<td>embed_code</td>
+<td>String</td>
+<td>Embed code of video</td>
+<td>true</td>
+</tr>
+</tbody></table>
 
           <h1 id="subscriptions">Subscriptions</h1>
 
@@ -991,11 +1535,7 @@ Authorization: Token token=&quot;auth_token&quot;</code></p>
 
 <p>This end removes the user subscription, and sets the user role to &ldquo;user&rdquo;, then returns a 204</p>
 
-<aside class="notice">This is a blue note</aside>
-
-<aside class="warning">This is a red note</aside>
-
-<aside class="success">This is a green note</aside>
+<aside class="notice">NOTE: this method requires the auth_token</aside>
 
 <h3 id="http-request">HTTP Request</h3>
 
@@ -1023,11 +1563,15 @@ Authorization: Token token=&quot;auth_token&quot;</code></p>
 
           <h1 id="series">Series</h1>
 
+<h2 id="todo">TODO</h2>
+
           <h1 id="videos">Videos</h1>
 
-<h2 id="get">Get</h2>
+<h2 id="todo">TODO</h2>
 
           <h1 id="games">Games</h1>
+
+<h2 id="todo">TODO</h2>
 
           <h1 id="search">Search</h1>
 
