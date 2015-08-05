@@ -1258,12 +1258,16 @@ Authorization: Token token=&quot;auth_token&quot;</code></p>
 <table><thead>
 <tr>
 <th>Parameter</th>
+<th>Datatype</th>
 <th>Description</th>
+<th>Required?</th>
 </tr>
 </thead><tbody>
 <tr>
 <td>user_id</td>
+<td>String</td>
 <td>ID of user creating subscription</td>
+<td>true</td>
 </tr>
 </tbody></table>
 
@@ -1330,16 +1334,22 @@ Authorization: Token token=&quot;auth_token&quot;</code></p>
 <table><thead>
 <tr>
 <th>Parameter</th>
+<th>Datatype</th>
 <th>Description</th>
+<th>Required?</th>
 </tr>
 </thead><tbody>
 <tr>
 <td>user_id</td>
-<td>ID of user creating subscription</td>
+<td>String ID of user creating subscription</td>
+<td>true</td>
+<td></td>
 </tr>
 <tr>
 <td>id</td>
+<td>String</td>
 <td>ID for the selected subscription</td>
+<td>true</td>
 </tr>
 </tbody></table>
 
@@ -1406,40 +1416,58 @@ Authorization: Token token=&quot;auth_token&quot;</code></p>
 <table><thead>
 <tr>
 <th>Parameter</th>
+<th>Datatype</th>
 <th>Description</th>
+<th>Required?</th>
 </tr>
 </thead><tbody>
 <tr>
 <td>user_id</td>
+<td>String</td>
 <td>ID of user creating subscription</td>
+<td>true</td>
 </tr>
 <tr>
 <td>plan_id</td>
+<td>String</td>
 <td>ID of selected subscription level</td>
+<td>true</td>
 </tr>
 <tr>
 <td>first_name</td>
-<td>Optional: User first name</td>
+<td>String</td>
+<td>User first name</td>
+<td>true</td>
 </tr>
 <tr>
 <td>last_name</td>
-<td>Optional: User last name</td>
+<td>String</td>
+<td>User last name</td>
+<td>true</td>
 </tr>
 <tr>
 <td>payment_token</td>
-<td>Optional: Token from merchant service containing payment information, this is not required for iOS users</td>
+<td>String</td>
+<td>Token from merchant service containing payment information, this is not required for iOS users</td>
+<td>false</td>
 </tr>
 <tr>
 <td>coupon_code</td>
-<td>Optional: ID of coupon</td>
+<td>String</td>
+<td>ID of coupon</td>
+<td>false</td>
 </tr>
 <tr>
 <td>subscription_source</td>
-<td>Optional: Source of user, available choices are: iOS, Android, Web</td>
+<td>String</td>
+<td>Source of user, available choices are: iOS, Android, Web. Web is default</td>
+<td>false</td>
 </tr>
 <tr>
 <td>subscriber_account_id</td>
-<td>Optional: Id to look up subscription details, this will be an ID provided by merchant</td>
+<td>String</td>
+<td>Id to look up subscription details, this will be an ID provided by merchant</td>
+<td>false</td>
 </tr>
 </tbody></table>
 
