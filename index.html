@@ -1189,6 +1189,90 @@ Authorization: Token token=&quot;auth_token&quot;</code></p>
 </tr>
 </tbody></table>
 
+          <h1 id="password-resets">Password Resets</h1>
+
+<h2 id="send-email-with-token">Send email with token</h2>
+<pre class="highlight ruby"><code>
+</code></pre>
+<pre class="highlight shell"><code>curl -X POST -H <span class="s2">"Cache-Control: no-cache"</span> <span class="s1">'https://api.jellytelly.com/password_resets?email=test@email.com'</span>
+</code></pre>
+
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="w">
+</span></code></pre>
+
+<p>This endpoint sends an email to the address supplied, creating a reset token valid for 2 hours.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">POST /password_resets?email=&lt;EMAIL&gt; HTTP/1.1
+Host: api.jellytelly.com
+Cache-Control: no-cache</code></p>
+
+<h3 id="url-parameters">URL Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Datatype</th>
+<th>Description</th>
+<th>Required?</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>email</td>
+<td>String</td>
+<td>The email address to send reset token to</td>
+<td>true</td>
+</tr>
+</tbody></table>
+
+<h2 id="reset-password">Reset password</h2>
+<pre class="highlight ruby"><code>
+</code></pre>
+<pre class="highlight shell"><code>curl -X PATCH -H <span class="s2">"Cache-Control: no-cache"</span> <span class="s1">'https://api.jellytelly.com/password_resets/abc?password=testuser&amp;password_confirmation=testuser'</span>
+</code></pre>
+
+<p>This endpoint resets the user password, validated by the reset token. This will logout the user requiring them to log back in.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">PATCH /password_resets/&lt;TOKEN&gt;?password=&lt;PASSWORD&gt;&amp;password_confirmation=&lt;PASSWORD_CONFIRMATION&gt; HTTP/1.1
+Host: api.jellytelly.com
+Cache-Control: no-cache</code></p>
+
+<h3 id="url-parameters">URL Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Datatype</th>
+<th>Description</th>
+<th>Required?</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>token</td>
+<td>String</td>
+<td>The token from password reset email, this is a included automatically</td>
+<td>true</td>
+</tr>
+<tr>
+<td>password</td>
+<td>String</td>
+<td>The new password</td>
+<td>true</td>
+</tr>
+<tr>
+<td>password_confirmation</td>
+<td>String</td>
+<td>The new password confirmation, this should match the password</td>
+<td>true</td>
+</tr>
+</tbody></table>
+
           <h1 id="subscriptions">Subscriptions</h1>
 
 <h2 id="list-all">List All</h2>
