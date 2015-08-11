@@ -2877,6 +2877,151 @@ Authorization: Token token=&quot;auth_token&quot;</code></p>
 </tr>
 </tbody></table>
 
+          <h1 id="home">Home</h1>
+
+<h2 id="logged-in">Logged In</h2>
+<pre class="highlight ruby"><code>
+</code></pre>
+<pre class="highlight shell"><code>curl -X GET -H <span class="s2">"Authorization: Token token="</span>auth_token<span class="s2">""</span> -H <span class="s2">"Cache-Control: no-cache"</span> <span class="s1">'https://api.jellytelly.com/logged_in_home'</span>
+</code></pre>
+
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"featured_video"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">541</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-07-25T03:02:19.134-05:00"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-08-03T19:28:41.342-05:00"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"embed_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"toZDY4aTpNsEcNOj1CcehWZHjiibK3vO"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Long Journey"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Macky and his family risk the wrath of the Romans by taking two refugee girls into their home. Through their exploits and retelling of their people’s stories – Daniel and the Lions’ Den as well as Jesus and the Miraculous Catch of Fish – we learn the importance of being courageous and helping others."</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"image_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://cf.c.ooyala.com/toZDY4aTpNsEcNOj1CcehWZHjiibK3vO/9nZFQMepuQiumqNn4zMDoxOjBrO1v9_L"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"duration"</span><span class="p">:</span><span class="w"> </span><span class="mi">1519652</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"asset_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"video"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"asset_status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"live"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"asset_created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2013-12-06T14:10:38.000-06:00"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"asset_updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-06-30T14:57:29.000-05:00"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"original_file_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Friends and Heroes 1-H.264 for Jelly Telly 3000kbs copy.mov"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"series_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">80</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"featured"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"episode"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nt">"popular_series"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-07-25T02:59:50.620-05:00"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-08-11T00:54:36.488-05:00"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"embed_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"IwNXc3dDoGzBO_7d5sllw9EDepmOTAIz"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Sing Through the BIble"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"displayName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Sing Through the Bible"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Sing through the Bible with Buck Denver and Friends! 30 music videos take you from Genesis to Revelation in a musical journey featuring your favorite characters from What’s in the Bible? - The Fabulous Bentley Brothers, Clive and Ian, Sunday School Lady and more! Includes on-screen sing-along lyrics for all 30 music videos."</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"imageUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://cf.c.ooyala.com/IwNXc3dDoGzBO_7d5sllw9EDepmOTAIz/promo261149814"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"popularity"</span><span class="p">:</span><span class="w"> </span><span class="mi">34</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"episodeCount"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"asset_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"video"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"duration"</span><span class="p">:</span><span class="w"> </span><span class="mi">5005</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"external_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"asset_created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-03-27T11:10:39.000-05:00"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"asset_updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-07-14T08:38:02.000-05:00"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"asset_status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"live"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"asset_hosted_at"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"original_file_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Black Screen for matt.mov"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nt">"new_episodes"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-07-25T02:59:50.620-05:00"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-08-11T00:54:36.488-05:00"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"embed_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"IwNXc3dDoGzBO_7d5sllw9EDepmOTAIz"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Sing Through the BIble"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"displayName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Sing Through the Bible"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Sing through the Bible with Buck Denver and Friends! 30 music videos take you from Genesis to Revelation in a musical journey featuring your favorite characters from What’s in the Bible? - The Fabulous Bentley Brothers, Clive and Ian, Sunday School Lady and more! Includes on-screen sing-along lyrics for all 30 music videos."</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"imageUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://cf.c.ooyala.com/IwNXc3dDoGzBO_7d5sllw9EDepmOTAIz/promo261149814"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"popularity"</span><span class="p">:</span><span class="w"> </span><span class="mi">34</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"episodeCount"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"asset_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"video"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"duration"</span><span class="p">:</span><span class="w"> </span><span class="mi">5005</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"external_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"asset_created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-03-27T11:10:39.000-05:00"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"asset_updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-07-14T08:38:02.000-05:00"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"asset_status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"live"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"asset_hosted_at"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"original_file_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Black Screen for matt.mov"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nt">"series_by_label"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"Adventures"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">85</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-07-25T03:00:06.942-05:00"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-08-08T01:53:59.378-05:00"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"embed_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"k5cWVlczrBvbWz9KJEvyjqf3WDkTtBDO"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"321 Penguins!"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"displayName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"321 Penguins"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Twin siblings Jason and Michelle discover penguin figurines that come to life. They travel the world and outer space learning important biblical and moral lessons with their four funky penguin friends."</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"imageUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://cf.c.ooyala.com/k5cWVlczrBvbWz9KJEvyjqf3WDkTtBDO/promo249759193"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"popularity"</span><span class="p">:</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"episodeCount"</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"asset_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"video"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"duration"</span><span class="p">:</span><span class="w"> </span><span class="mi">6573</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"external_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"asset_created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-02-16T11:32:00.000-06:00"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"asset_updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-03-06T14:47:00.000-06:00"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"asset_status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"live"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"asset_hosted_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"original_file_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BLACK TEST 2.mp4"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nt">"Ages 2-5"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">...</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nt">"Ages 5-8"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">...</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nt">"Ages 8 and Up"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">...</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nt">"All Ages"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">...</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nt">"Bible Stories"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">...</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nt">"Cartoons"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">...</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nt">"Christmas"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">...</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nt">"Educational"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">...</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nt">"History and Nature"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">...</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nt">"Holidays"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">...</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nt">"Live Action"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">...</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nt">"Movies"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">...</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nt">"Music and Art"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">...</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nt">"Parables"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">...</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nt">"Puppets"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">...</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nt">"Values"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">...</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<p>This endpoint returns all objects for the logged in home page: Featured Video, Popular Series, Series with new episodes, and Series by labels.</p>
+
+<aside class="notice">NOTE: this method requires the auth_token</aside>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET /logged_in_home HTTP/1.1
+Host: api.jellytelly.com
+Authorization: Token token=&quot;auth_token&quot;</code></p>
+
           <h1 id="errors">Errors</h1>
 
 <p>The Jellytelly API uses the following error codes:</p>
