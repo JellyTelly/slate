@@ -548,7 +548,7 @@ Authorization: Token token=&quot;auth_token&quot;</code></p>
 <h2 id="edit">Edit</h2>
 <pre class="highlight ruby"><code>
 </code></pre>
-<pre class="highlight shell"><code>curl -X PATCH -H <span class="s2">"Authorization: Token token="</span>auth_token<span class="s2">""</span> -H <span class="s2">"Cache-Control: no-cache"</span> <span class="s1">'http://api.jellytelly.com/users/12?user[email]=tester@email.com&amp;user[password]=newpassword&amp;user[first_name]=Tester&amp;user[last_name]=McTesterson&amp;user[username]'</span>
+<pre class="highlight shell"><code>curl -X PUT -H <span class="s2">"Authorization: Token token="</span>auth_token<span class="s2">""</span> -H <span class="s2">"Cache-Control: no-cache"</span> <span class="s1">'http://api.jellytelly.com/users/12?user[email]=tester@email.com&amp;user[password]=newpassword&amp;user[first_name]=Tester&amp;user[last_name]=McTesterson&amp;user[username]'</span>
 </code></pre>
 
 <blockquote>
@@ -569,7 +569,7 @@ Authorization: Token token=&quot;auth_token&quot;</code></p>
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">PATCH /users/12?user[email]=tester@email.com&amp;user[password]=newpassword&amp;user[first_name]=Tester&amp;user[last_name]=McTesterson HTTP/1.1
+<p><code class="prettyprint">PUT /users/12?user[email]=tester@email.com&amp;user[password]=newpassword&amp;user[first_name]=Tester&amp;user[last_name]=McTesterson HTTP/1.1
 Host: api.jellytelly.com
 Authorization: Token token=&quot;auth_token&quot;</code></p>
 
@@ -1232,14 +1232,14 @@ Cache-Control: no-cache</code></p>
 <h2 id="reset-password">Reset password</h2>
 <pre class="highlight ruby"><code>
 </code></pre>
-<pre class="highlight shell"><code>curl -X PATCH -H <span class="s2">"Cache-Control: no-cache"</span> <span class="s1">'https://api.jellytelly.com/password_resets/abc?password=testuser&amp;password_confirmation=testuser'</span>
+<pre class="highlight shell"><code>curl -X PUT -H <span class="s2">"Cache-Control: no-cache"</span> <span class="s1">'https://api.jellytelly.com/password_resets/abc?password=testuser&amp;password_confirmation=testuser'</span>
 </code></pre>
 
 <p>This endpoint resets the user password, validated by the reset token. This will logout the user requiring them to log back in.</p>
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">PATCH /password_resets/&lt;TOKEN&gt;?password=&lt;PASSWORD&gt;&amp;password_confirmation=&lt;PASSWORD_CONFIRMATION&gt; HTTP/1.1
+<p><code class="prettyprint">PUT /password_resets/&lt;TOKEN&gt;?password=&lt;PASSWORD&gt;&amp;password_confirmation=&lt;PASSWORD_CONFIRMATION&gt; HTTP/1.1
 Host: api.jellytelly.com
 Cache-Control: no-cache</code></p>
 
@@ -1558,7 +1558,7 @@ Authorization: Token token=&quot;auth_token&quot;</code></p>
 <h2 id="edit">Edit</h2>
 <pre class="highlight ruby"><code>
 </code></pre>
-<pre class="highlight shell"><code>curl -X PATCH -H <span class="s2">"Authorization: Token token="</span>auth_token<span class="s2">""</span> -H <span class="s2">"Cache-Control: no-cache"</span> <span class="s1">'http://api.jellytelly.com/users/1/subscriptions/sub_6e0X9Kq1yWCBXw?payment_token=tok_16SMewJDs1f4mwxy1vziPDOY&amp;coupon_code=10OFF'</span>
+<pre class="highlight shell"><code>curl -X PUT -H <span class="s2">"Authorization: Token token="</span>auth_token<span class="s2">""</span> -H <span class="s2">"Cache-Control: no-cache"</span> <span class="s1">'http://api.jellytelly.com/users/1/subscriptions/sub_6e0X9Kq1yWCBXw?payment_token=tok_16SMewJDs1f4mwxy1vziPDOY&amp;coupon_code=10OFF'</span>
 </code></pre>
 
 <blockquote>
@@ -1609,7 +1609,7 @@ Authorization: Token token=&quot;auth_token&quot;</code></p>
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">PATCH /users/1/subscriptions/sub_6e0X9Kq1yWCBXw?payment_token=tok_16SMewJDs1f4mwxy1vziPDOY&amp;coupon_code=10OFF HTTP/1.1
+<p><code class="prettyprint">PUT /users/1/subscriptions/sub_6e0X9Kq1yWCBXw?payment_token=tok_16SMewJDs1f4mwxy1vziPDOY&amp;coupon_code=10OFF HTTP/1.1
 Host: api.jellytelly.com
 Authorization: Token token=&quot;auth_token&quot;</code></p>
 
