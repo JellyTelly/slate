@@ -1558,7 +1558,7 @@ Authorization: Token token=&quot;auth_token&quot;</code></p>
 <h2 id="edit">Edit</h2>
 <pre class="highlight ruby"><code>
 </code></pre>
-<pre class="highlight shell"><code>curl -X PUT -H <span class="s2">"Authorization: Token token="</span>auth_token<span class="s2">""</span> -H <span class="s2">"Cache-Control: no-cache"</span> <span class="s1">'http://api.jellytelly.com/users/1/subscriptions/sub_6e0X9Kq1yWCBXw?payment_token=tok_16SMewJDs1f4mwxy1vziPDOY&amp;coupon_code=10OFF'</span>
+<pre class="highlight shell"><code>curl -X PUT -H <span class="s2">"Authorization: Token token="</span>auth_token<span class="s2">""</span> -H <span class="s2">"Cache-Control: no-cache"</span> <span class="s1">'http://api.jellytelly.com/users/1/subscriptions/sub_6e0X9Kq1yWCBXw?payment_token=tok_16SMewJDs1f4mwxy1vziPDOY&amp;coupon_code=10OFF&amp;plan_id=JTA'</span>
 </code></pre>
 
 <blockquote>
@@ -1609,7 +1609,7 @@ Authorization: Token token=&quot;auth_token&quot;</code></p>
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">PUT /users/1/subscriptions/sub_6e0X9Kq1yWCBXw?payment_token=tok_16SMewJDs1f4mwxy1vziPDOY&amp;coupon_code=10OFF HTTP/1.1
+<p><code class="prettyprint">PUT /users/1/subscriptions/sub_6e0X9Kq1yWCBXw?payment_token=tok_16SMewJDs1f4mwxy1vziPDOY&amp;coupon_code=10OFF&amp;plan_id=JTA HTTP/1.1
 Host: api.jellytelly.com
 Authorization: Token token=&quot;auth_token&quot;</code></p>
 
@@ -1618,24 +1618,40 @@ Authorization: Token token=&quot;auth_token&quot;</code></p>
 <table><thead>
 <tr>
 <th>Parameter</th>
+<th>Datatype</th>
 <th>Description</th>
+<th>Required?</th>
 </tr>
 </thead><tbody>
 <tr>
 <td>user_id</td>
+<td>String</td>
 <td>ID of user creating subscription</td>
+<td>true</td>
 </tr>
 <tr>
 <td>id</td>
+<td>String</td>
 <td>ID of subscription</td>
+<td>true</td>
+</tr>
+<tr>
+<td>plan_id</td>
+<td>String</td>
+<td>ID of plan, passed is changing subscription</td>
+<td>false</td>
 </tr>
 <tr>
 <td>payment_token</td>
-<td>Optional: Token from merchant service containing payment information, this is not required for iOS users</td>
+<td>String</td>
+<td>Token from merchant service containing payment information, this is not required for iOS users</td>
+<td>false</td>
 </tr>
 <tr>
 <td>coupon_code</td>
-<td>Optional: ID of coupon</td>
+<td>String</td>
+<td>ID of coupon</td>
+<td>false</td>
 </tr>
 </tbody></table>
 
@@ -1660,16 +1676,22 @@ Authorization: Token token=&quot;auth_token&quot;</code></p>
 <table><thead>
 <tr>
 <th>Parameter</th>
+<th>Datatype</th>
 <th>Description</th>
+<th>Required?</th>
 </tr>
 </thead><tbody>
 <tr>
 <td>user_id</td>
+<td>String</td>
 <td>ID of user creating subscription</td>
+<td>true</td>
 </tr>
 <tr>
 <td>id</td>
+<td>String</td>
 <td>ID of subscription</td>
+<td>true</td>
 </tr>
 </tbody></table>
 
