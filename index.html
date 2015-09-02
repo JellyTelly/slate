@@ -2615,14 +2615,14 @@ Authorization: Token token=&quot;auth_token&quot;</code></p>
 <h2 id="get-player-embed-token">Get player embed token</h2>
 <pre class="highlight ruby"><code>
 </code></pre>
-<pre class="highlight shell"><code>curl -X GET -H <span class="s2">"Authorization: Token token="</span>auth_token<span class="s2">""</span> -H <span class="s2">"Cache-Control: no-cache"</span> <span class="s1">'http://api.jellytelly.com/videos/playerEmbedToken?video_embed_code=M2N3RwcDqo98egZnFGbTk-FvkJ32VDTc&amp;player_id=OWVmODJmMjQ4NmU3NWI5NDNhNmNhNjFi&amp;user_id=3'</span>
+<pre class="highlight shell"><code>curl -X GET -H <span class="s2">"Authorization: Token token="</span>auth_token<span class="s2">""</span> -H <span class="s2">"Cache-Control: no-cache"</span> <span class="s1">'http://api.jellytelly.com/videos/playerEmbedToken?video_embed_code=M2N3RwcDqo98egZnFGbTk-FvkJ32VDTc&amp;pcode=hpZzM615i0ji4siN0eiX3cOy2BeU&amp;user_id=3'</span>
 </code></pre>
 
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
 </blockquote>
-<pre class="highlight json"><code><span class="p">{</span><span class="w">  
-   </span><span class="nt">"embed_token"</span><span class="p">:</span><span class="s2">"http://player.ooyala.com/sas/embed_token/OWVmODJmMjQ4NmU3NWI5NDNhNmNhNjFi/M2N3RwcDqo98egZnFGbTk-FvkJ32VDTc?account_id=3\u0026api_key=hpZzM615i0ji4siN0eiX3cOy2BeU.qpcP-\u0026expires=1437275726\u0026signature=dT7dlTmcS2PFxhQuUxw7nC8ZLb%2BzCTxt0j6wWjJvIy"</span><span class="w">
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"embed_token"</span><span class="p">:</span><span class="s2">"http://player.ooyala.com/sas/embed_token/cfeeb8ea4ff0425494bedc3d18370a29/M2N3RwcDqo98egZnFGbTk-FvkJ32VDTc?account_id=3\u0026api_key=hpZzM615i0ji4siN0eiX3cOy2BeU.qpcP-\u0026expires=1441284424\u0026signature=ODf0qkJ1048kXseoiJ%2BybSooa1IiqS5Yt8OGraXHDp"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 
@@ -2632,7 +2632,7 @@ Authorization: Token token=&quot;auth_token&quot;</code></p>
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">GET /videos/playerEmbedToken?video_embed_code=&lt;video_embed_code&gt;&amp;player_id=&lt;player_id&gt;&amp;user_id=&lt;user_id&gt; HTTP/1.1
+<p><code class="prettyprint">GET /videos/playerEmbedToken?video_embed_code=&lt;video_embed_code&gt;&amp;pcode=&lt;pcode&gt;&amp;user_id=&lt;user_id&gt; HTTP/1.1
 Host: api.jellytelly.com
 Authorization: Token token=&quot;auth_token&quot;</code></p>
 
@@ -2653,9 +2653,9 @@ Authorization: Token token=&quot;auth_token&quot;</code></p>
 <td>true</td>
 </tr>
 <tr>
-<td>player_id</td>
+<td>pcode</td>
 <td>String</td>
-<td>Id of player</td>
+<td>partner code from Ooyala</td>
 <td>true</td>
 </tr>
 <tr>
